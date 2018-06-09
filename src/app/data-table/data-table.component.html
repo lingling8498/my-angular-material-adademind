@@ -1,0 +1,50 @@
+<div class="mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">ID</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+    </ng-container>
+
+    <!-- lastName Column -->
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">LAST NAME</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.lastName}}</mat-cell>
+    </ng-container>
+
+    <!-- firstName Column -->
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">FIRST NAME</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.firstName}}</mat-cell>
+    </ng-container>
+
+    <!-- city Column -->
+    <ng-container matColumnDef="city">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">CITY</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.city}}</mat-cell>
+    </ng-container>
+
+    <!-- province Column -->
+    <ng-container matColumnDef="province">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">STATE</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.province}}</mat-cell>
+    </ng-container>
+
+    <!-- birthday Column -->
+    <ng-container matColumnDef="birthday">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="tableHeader">BIRTYDAY</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.birthday | date}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator #paginator
+    [length]="dataSource.data.length"
+    [pageIndex]="0" 
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 50, 100, 125, 150, 200]">
+  </mat-paginator>
+</div>
