@@ -1,3 +1,48 @@
+<!-- https://alligator.io/angular/material-design-angular-reference/ -->
+<mat-card>
+  <button mat-button>All</button>
+  <button mat-raised-button>Of</button>
+  <button mat-raised-button color="primary">The</button>
+  <button mat-raised-button color="accent">Buttons</button>
+</mat-card>
+<hr>
+<mat-card>
+  <button mat-fab color="primary">
+    <mat-icon>send</mat-icon>
+  </button>
+  <button mat-mini-fab color="accent">
+      <mat-icon>send</mat-icon>
+  </button>
+</mat-card>
+<hr>
+<mat-card>
+  <mat-button-toggle-group>
+    <mat-button-toggle>Small</mat-button-toggle>
+    <mat-button-toggle>Medium</mat-button-toggle>
+    <mat-button-toggle>Large</mat-button-toggle>
+    <mat-button-toggle disabled>X-Large</mat-button-toggle>
+  </mat-button-toggle-group>
+</mat-card>
+<hr>
+<mat-card>
+  <mat-button-toggle-group>
+    <mat-button-toggle value="good"><mat-icon>thumb_down</mat-icon></mat-button-toggle>
+    <mat-button-toggle value="bad"><mat-icon>thumb_up</mat-icon></mat-button-toggle>
+  </mat-button-toggle-group>
+</mat-card>
+<hr>
+<mat-card>
+  <mat-card-header>
+    <img mat-card-avatar src="https://source.unsplash.com/random/200x200">
+    <mat-card-title>Cards are the best</mat-card-title>
+    <mat-card-subtitle>Really, they are!</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+  <mat-card-content>
+    <p>Something pretty...</p>
+  </mat-card-content>
+</mat-card>
+<hr>
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
@@ -16,4 +61,32 @@
     <button mat-button>LIKE</button>
     <button mat-button>SHARE</button>
   </mat-card-actions>
+</mat-card>
+<hr>
+<h2>Mat-Checkbox</h2>
+<mat-card>
+  <mat-checkbox indeterminate="isIndeterminate">
+    Inderterminate
+  </mat-checkbox>
+  <mat-checkbox [checked]="isChecked">
+    Checked already
+  </mat-checkbox>
+  <mat-checkbox>
+    Unchecked
+  </mat-checkbox>
+</mat-card>
+<hr>
+<h2>Mat-Grid List</h2>
+<mat-card>
+  <mat-grid-list cols="3">
+    <mat-grid-tile [style.border-right]="'1px dashed #ddd'">
+      John
+    </mat-grid-tile>
+    <mat-grid-tile [style.border-right]="'1px dashed #ddd'">
+      Paul
+    </mat-grid-tile>
+    <mat-grid-tile>
+      Ringo
+    </mat-grid-tile>
+  </mat-grid-list>
 </mat-card>

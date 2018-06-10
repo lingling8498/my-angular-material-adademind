@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule, MatIconModule, MatToolbarModule, MatSidenavModule, MatListModule, MatTableModule, MatPaginatorModule, MatSortModule, MatCardModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatToolbarModule, MatSidenavModule, MatListModule, MatTableModule, MatPaginatorModule, MatSortModule, MatCardModule, MatButtonToggleModule, MatCheckboxModule, MatGridListModule } from '@angular/material';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { DataTableComponent } from './data-table/data-table.component';
@@ -52,7 +52,10 @@ const routes: Routes = [
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatCardModule 
+    MatCardModule,
+    MatButtonToggleModule,
+    MatCheckboxModule,
+    MatGridListModule
   ],
   exports: [
     RouterModule

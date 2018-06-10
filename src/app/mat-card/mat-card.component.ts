@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mat-card.component.css']
 })
 export class MatCardComponent implements OnInit {
-
+  isChecked: boolean = true;
+  
   constructor() { }
 
   ngOnInit() {
