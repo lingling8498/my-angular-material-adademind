@@ -1,0 +1,12 @@
+<!-- <div style="background-color: white; width:100%">a</div> -->
+<mat-card>
+    <mat-list *ngFor="let avatar of avatars">
+        <mat-list-item>
+        <img mat-list-avatar src="{{ avatar.path }}" alt="{{ avatar.text}}">
+        <h3 mat-line>{{ avatar.title }}</h3>
+        <p mat-line>
+            <span>{{ avatar.text }}</span>
+        </p>
+        </mat-list-item>
+    </mat-list>
+</mat-card>

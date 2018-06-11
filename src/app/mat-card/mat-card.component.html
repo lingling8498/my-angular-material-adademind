@@ -5,7 +5,7 @@
   <button mat-raised-button color="primary">The</button>
   <button mat-raised-button color="accent">Buttons</button>
 </mat-card>
-<hr>
+
 <mat-card>
   <button mat-fab color="primary">
     <mat-icon>send</mat-icon>
@@ -14,7 +14,7 @@
       <mat-icon>send</mat-icon>
   </button>
 </mat-card>
-<hr>
+
 <mat-card>
   <mat-button-toggle-group>
     <mat-button-toggle>Small</mat-button-toggle>
@@ -23,26 +23,30 @@
     <mat-button-toggle disabled>X-Large</mat-button-toggle>
   </mat-button-toggle-group>
 </mat-card>
-<hr>
+
 <mat-card>
   <mat-button-toggle-group>
     <mat-button-toggle value="good"><mat-icon>thumb_down</mat-icon></mat-button-toggle>
     <mat-button-toggle value="bad"><mat-icon>thumb_up</mat-icon></mat-button-toggle>
   </mat-button-toggle-group>
 </mat-card>
-<hr>
+
 <mat-card>
   <mat-card-header>
-    <img mat-card-avatar src="https://source.unsplash.com/random/200x200">
+    <!-- <img mat-card-avatar src="https://source.unsplash.com/random/200x200"> -->
+    <img mat-card-avatar src="./assets/images/rawlings offical league baseball.jpg">
     <mat-card-title>Cards are the best</mat-card-title>
     <mat-card-subtitle>Really, they are!</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"> -->
+  <img mat-card-image src="./assets/images/mlb_large.gif">
   <mat-card-content>
     <p>Something pretty...</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repudiandae repellat perferendis corrupti, harum provident
+      ipsam illo laudantium magni deleniti corporis modi error aperiam iure molestiae eligendi quo voluptatem minus?</p>
   </mat-card-content>
 </mat-card>
-<hr>
+
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
@@ -58,11 +62,11 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+    <button mat-button><mat-icon>thumb_up</mat-icon>LIKE</button>
+    <button mat-button><mat-icon>share</mat-icon>SHARE</button>
   </mat-card-actions>
 </mat-card>
-<hr>
+
 <h2>Mat-Checkbox</h2>
 <mat-card>
   <mat-checkbox indeterminate="isIndeterminate">
@@ -75,18 +79,229 @@
     Unchecked
   </mat-checkbox>
 </mat-card>
-<hr>
+
 <h2>Mat-Grid List</h2>
 <mat-card>
-  <mat-grid-list cols="3">
-    <mat-grid-tile [style.border-right]="'1px dashed #ddd'">
-      John
+  <mat-grid-list cols="4">
+    <mat-grid-tile [style.border-right]="'2px dashed red'">
+      NBA BASKETBALL
     </mat-grid-tile>
-    <mat-grid-tile [style.border-right]="'1px dashed #ddd'">
-      Paul
+    <mat-grid-tile [style.border-right]="'2px dashed #ddd'">
+      NFL FOOTBALL
+    </mat-grid-tile>
+    <mat-grid-tile [style.border-right]="'2px dashed red'">
+      MLB BASEBALL
     </mat-grid-tile>
     <mat-grid-tile>
-      Ringo
+      NHL HOCKY
     </mat-grid-tile>
   </mat-grid-list>
 </mat-card>
+
+<h2>Basic grid-list (2)</h2>
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile [style.background]="m_lightSalmon">Dashboards</mat-grid-tile>
+  <mat-grid-tile [style.background]="m_lightPink">Calendar</mat-grid-tile>
+  <mat-grid-tile [style.background]="m_lightPurple">E-Commerce</mat-grid-tile>
+  <mat-grid-tile [style.background]="m_skyeBlue">Academy</mat-grid-tile>
+</mat-grid-list>
+
+<mat-toolbar>
+  Angular Material Dynamic grid-list Example
+  </mat-toolbar>
+<div class="basic-container"></div>
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile
+    *ngFor="let tile of tiles"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows"
+    [style.background]="tile.color">
+    {{tile.text}}
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-toolbar>
+  Angular Material MAT-ICON Example
+  </mat-toolbar>
+<div class="basic-container"></div>
+<mat-card>
+  <mat-icon>translate</mat-icon>
+  <mat-icon>hearing</mat-icon>
+  <mat-icon>audiotrack</mat-icon>
+  <mat-icon>mail</mat-icon>
+  <mat-icon>adjust</mat-icon>
+  <mat-icon>dock</mat-icon>
+  <mat-icon>camera</mat-icon>
+</mat-card>
+<br />
+<mat-toolbar>
+  Angular Material INPUT Example
+  </mat-toolbar>
+<div class="basic-container"></div>
+<mat-card>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Your Text" dividerColor="accent">
+  </mat-form-field>
+</mat-card>
+
+<br />
+<mat-toolbar>
+  Company Edit
+</mat-toolbar>
+<div class="basic-container"></div>
+<mat-card class="example-card">
+  <mat-form-field>
+    <input matInput type="text" placeholder="Enter Company Name" dividerColor="accent">
+  </mat-form-field>
+  <mat-card-actions align="right">
+    <button mat-button (click)="saveCompany()"><mat-icon>save</mat-icon>Save</button>
+    <button mat-button (click)="removeCompany()"><mat-icon>delete</mat-icon>Remove</button>
+  </mat-card-actions>
+</mat-card>
+
+
+<br />
+<!-- <mat-grid-list cols="1" rowHeight="100px">
+  <mat-grid-tile style="background-color: green">
+    <grid-tile-div></grid-tile-div>
+  </mat-grid-tile>
+</mat-grid-list> -->
+<mat-toolbar>
+  Angular Material Grid Example
+  </mat-toolbar>
+<div class="basic-container"></div>
+<mat-grid-list cols="3">
+  <mat-grid-tile>
+    <grid-tile-div></grid-tile-div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <grid-tile-div></grid-tile-div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <grid-tile-div></grid-tile-div>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<br />
+<mat-toolbar>
+  Menu
+</mat-toolbar>
+<mat-card>
+  <button mat-raised-button [mat-menu-trigger-for]="menu">Menu</button>
+</mat-card>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item><mat-icon>face</mat-icon>Profile</button>
+  <button mat-menu-item><mat-icon>account_box</mat-icon>Account</button>
+  <button mat-menu-item><mat-icon>shopping_cart</mat-icon>Shopping cart</button>
+  <button mat-menu-item><mat-icon>build</mat-icon>Settings</button>
+  <button mat-menu-item><mat-icon>help</mat-icon>Help</button>
+</mat-menu>
+
+<br />
+<mat-toolbar>
+  Progress-spinner
+</mat-toolbar>
+<mat-card>
+  <mat-grid-list cols="3">
+    <mat-grid-tile>
+      <mat-progress-spinner mode="determinate" [value]="65"></mat-progress-spinner>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-progress-spinner mode="indeterminate" color="accent"></mat-progress-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
+
+<br />
+<mat-toolbar>
+  Progress-bar
+</mat-toolbar>
+<mat-card>
+  <p>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </p>
+  <p>
+    <mat-progress-bar mode="buffer" value="20" bufferValue="50"></mat-progress-bar>
+  </p>
+  <p>
+    <mat-progress-bar mode="query"></mat-progress-bar>
+  </p>
+  <p>
+    <mat-progress-bar mode="determinate" value="75" color="accent"></mat-progress-bar>
+  </p>  
+</mat-card>
+
+<br />
+<mat-toolbar>
+  Tabs [selectedIndex]="1" --> lunch
+</mat-toolbar>
+<mat-card>
+  <mat-tab-group [selectedIndex]="1">
+    <mat-tab label="Breakfast">
+      <h3>Breakfast option</h3>
+      <p>Toast /w peanut butter</p>
+    </mat-tab>
+    <mat-tab label="Lunch">
+      <h3>Lunch option</h3>
+      <p>Club sandwich</p>
+    </mat-tab>
+    <mat-tab label="Dinner">
+      <h3>Dinner option</h3>
+      <p>Lasagna</p>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
+<br />
+<mat-toolbar>
+  Radio
+</mat-toolbar>
+<mat-card>
+  <mat-radio-group>
+    <mat-radio-button value="bacon">Bacon</mat-radio-button>
+    <mat-radio-button value="ham">Ham</mat-radio-button>
+    <mat-radio-button value="chicken">Chicken</mat-radio-button>
+    <mat-radio-button value="tuna" [checked]="isChecked">Tuna</mat-radio-button>
+  </mat-radio-group>
+</mat-card>
+
+<br />
+<mat-toolbar>
+  Slide-toggle
+</mat-toolbar>
+<mat-card>
+  <mat-slide-toggle>Bacon</mat-slide-toggle>
+  <mat-slide-toggle disabled>Ham</mat-slide-toggle>
+  <mat-slide-toggle [checked]="isChecked">Chicken</mat-slide-toggle>
+</mat-card>
+
+<br />
+<mat-toolbar>
+  Slider
+</mat-toolbar>
+<mat-card>
+  <mat-slider></mat-slider>
+  <mat-slider disabled></mat-slider>
+  <mat-slider value="75"></mat-slider>
+</mat-card>
+
+<br />
+<mat-toolbar>
+  Toolbar
+</mat-toolbar>
+<mat-toolbar color="accent">
+  <span>Logo</span> &nbsp;
+  <span>Welcome</span>
+  <button mat-raised-button color="primary">Menu</button>
+</mat-toolbar>
+
+<br />
+<mat-toolbar>
+  Tooltip
+</mat-toolbar>
+<div>
+  <span matTooltip="Tooltip!">I have a tooltip</span>
+</div>
