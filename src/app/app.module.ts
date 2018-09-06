@@ -17,6 +17,7 @@ import { FirstpageComponent } from './firstpage/firstpage.component';
 import { MatCardComponent } from './mat-card/mat-card.component';
 
 import { GridTileDiv } from './mat-card/grid-tile-div';
+import { FormFieldOverviewExampleComponent } from './form-field-overview-example/form-field-overview-example.component';
 const routes: Routes = [
   {
     path: "",
@@ -43,7 +44,8 @@ const routes: Routes = [
     DataTableComponent,
     FirstpageComponent,
     MatCardComponent,
-    GridTileDiv
+    GridTileDiv,
+    FormFieldOverviewExampleComponent
   ],
   imports: [
     BrowserModule,
